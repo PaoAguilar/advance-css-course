@@ -6,3 +6,39 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* el border box es para que los bordes y los rellenos no se añadan al total width o height que especificamos en un box */
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /* significa que es 1.7 mas grande que la altura de la linea predefinida */
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  height: 95vh; /* En cada punto, la altura de este elemento debe ser 95% de la altura de la ventana grafica
+  Si pomenos 100, el elemento tendra la misma altura del view port */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(../img/hero.jpg); /* la imagen se espicifico que estara debajo de los colores */
+  background-size: cover; /* lo que hace cover es que cualquier que sea el view port del elemento, siempre va a tratar de hacer fit con el elemento dentro del box */
+  background-position: top; /* la position de la imagen siempre va a quedarse arriba cuando se haga mas pequeña */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* la primer esquina no necesitamos moverla
+    la segunda esquina necesitamos moverla en la x xq tiene que estar 100% separada a la primer esquina, la y no se mueve
+    la tercera esquina en equis necesita estar separado un 100% con la otra esquina, y en y que se separa solo un 75vh, un 75% de la view port height de la pantalla */
+  /* especifica un poligono en el que la imagen o el elemento seguira siendo visible.
+    Especificamos coordenadas que definen el poligono
+    Las x e y, representan 4 coordenadas de las 4 esquinas del elemento
+    Empieza desde arriba izquierda, arrriba derecha, abajo derecha y abajo izquierda */
+}
