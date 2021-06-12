@@ -33,6 +33,7 @@ body {
     url(../img/hero.jpg); /* la imagen se espicifico que estara debajo de los colores */
   background-size: cover; /* lo que hace cover es que cualquier que sea el view port del elemento, siempre va a tratar de hacer fit con el elemento dentro del box */
   background-position: top; /* la position de la imagen siempre va a quedarse arriba cuando se haga mas pequeña */
+  position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* la primer esquina no necesitamos moverla
     la segunda esquina necesitamos moverla en la x xq tiene que estar 100% separada a la primer esquina, la y no se mueve
@@ -41,4 +42,44 @@ body {
     Especificamos coordenadas que definen el poligono
     Las x e y, representan 4 coordenadas de las 4 esquinas del elemento
     Empieza desde arriba izquierda, arrriba derecha, abajo derecha y abajo izquierda */
+}
+
+.logo-box {
+  position: absolute; /* una position absolute siempre tiene un padre que es la position relative, su padre en este casi es la clase header*/
+  /* Top y left, tienen como referencia el relative, entonces desde ahi van a empezar a contar */
+  top: 40px; /* desde donde va a comenzar, entonces contando 40px desde arriba */
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* la mitad del ancho a la izquierda, y la mitad del alto para arriba */
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
